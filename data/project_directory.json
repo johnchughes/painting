@@ -1,0 +1,28 @@
+{
+    "projects": [
+        {
+            "name": "project 1",
+            "images": [],
+            "game":"Warhammer 40k",
+            "faction":"Tau Empire",
+            "description": "",
+            "quality": "Parade"
+        },
+        {
+            "name": "project 2",
+            "images": [],
+            "game":"40k Kill team",
+            "faction":"Sisters of battle novitiates",
+            "description": "",
+            "quality": "Battle Ready"
+        },
+        {
+            "name": "project 3",
+            "images": [],
+            "game":"Bolt Action",
+            "faction":"US Airborne",
+            "description": "",
+            "quality": "Battle Ready"
+        }
+    ]
+}
