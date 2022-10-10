@@ -1,5 +1,4 @@
 const ProjectContainer = (props) => {
-    
     const projectList = props.projects.map((x, i) => {
         return (
             <div key={i}>

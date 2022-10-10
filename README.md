@@ -1,3 +1,14 @@
+# What is this?
+This repository is a template for creating data driven web pages, Majority of the data for the website is loaded from json files contained within the repository itself.
+
+Is this the optimal way to host and build a website? not really (see below).
+
+# Why this over a standard static website generator?
+The answer to that is quite simple, I like to tinker and just get going with a project. Hosting the data locally to the application allows me to do just that.  
+
+# Hosting
+As this is just a react application, there are several options for hosting the build code. Github pages, Azure static websites or any other provider that will take html/js and serve it. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

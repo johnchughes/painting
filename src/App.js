@@ -1,28 +1,21 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import './App.scss';
-import Filters from './Filters/Filters.js';
-import ProjectContainer from './Projects/ProjectContainer';
+import Footer from './Components/Common/Footer';
+import Filters from './Components/Filters/Filters.js';
+import Header from './Components/Common/Header.js';
+import ProjectContainer from './Components/Projects/ProjectContainer';
+import usePageData from './Components/Hooks/usePageData';
 
 function App() {
 
-  const [projects, setProjects] = useState(null);
+  const data = usePageData('/data/project_directory.json');
 
   useEffect(() => {
-    const getProjects = async () => {
-      const response = await fetch('data/project_directory.json');
-      const data = await response.json();
-      setProjects(data.projects);
-    }
+    if (data == null) return;
 
-    getProjects();
-  }, []);
-
-  useEffect(() => {
-    if (projects == null) return;
-
-    const games = projects.map(x => x.game);
-    const standards = projects.map(x => x.quality);
-    const factions = projects.map(x => `${x.game}: ${x.faction}`);
+    const games = data.projects.map(x => x.game);
+    const standards = data.projects.map(x => x.quality);
+    const factions = data.projects.map(x => `${x.game}: ${x.faction}`);
 
     const filterData = {
       games, standards, factions
@@ -30,25 +23,20 @@ function App() {
 
     console.log(filterData);
 
-  }, [projects]);
+  }, [data]);
 
-  if (projects === null) {
+  if (data === null) {
     return <div>loading projects ... </div>
   }
 
   return (
     <div className='container'>
-      <header>
-        <h1>Painting Projects</h1>
-        <p>Battle ready armies with parade quality HQs.</p>
-      </header>
+      <Header />
       <main>
         <Filters />
-        <ProjectContainer projects={projects} />
+        <ProjectContainer projects={data.projects} />
       </main>
-      <footer>
-        This website is <a href="https://github.com/johnchughes/painting">open source</a>
-      </footer>
+      <Footer />
     </div>
   );
 }
