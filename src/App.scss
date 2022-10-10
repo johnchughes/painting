@@ -1,0 +1,29 @@
+body {
+    
+    background: white;
+}
+
+.container {
+    margin:0 auto;
+    width:70%;
+    height:100%;
+
+    header {
+        font-family: 'Open Sans', sans-serif;
+        margin-bottom: 1rem;
+        padding: 2rem 0;
+        border-bottom: 1px solid black;
+        h1 {
+            font-size: 3rem;
+            font-weight: 400;
+            margin:0;
+            padding:0.5rem 0;
+        }
+
+        p {
+            font-weight: 100;
+            margin:0;
+            padding:0;
+        }
+    }
+}
