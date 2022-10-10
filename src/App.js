@@ -47,7 +47,7 @@ function App() {
         <ProjectContainer projects={projects} />
       </main>
       <footer>
-        
+        This website is <a href="https://github.com/johnchughes/painting">open source</a>
       </footer>
     </div>
   );
